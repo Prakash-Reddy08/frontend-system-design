@@ -1,0 +1,19 @@
+{
+  "name": "grpc",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "client": "nodemon client/",
+    "server": "nodemon server/"
+  },
+  "keywords": [],
+  "author": "prakash",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.0",
+    "@grpc/grpc-js": "1.9.13",
+    "@grpc/proto-loader": "0.7.10"
+  }
+}

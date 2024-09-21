@@ -88,16 +88,18 @@ const resolvers = {
     languages: () => languages,
     continent: (_, { id }) =>
       continents.find((continent) => continent.id === id),
-    country: (_, { id }) => countries.find((country) => country.id === id),
+    country: (_, { id }) => {
+      return countries.find((country) => country.id === id);
+    },
     language: (_, { id }) => languages.find((language) => language.id === id),
   },
   Mutation: {
-    addCountry: (parent, args) => {
+    addCountry: (_, args) => {
       const newCountry = { ...args, id: (countries.length + 1).toString() };
       countries.push(newCountry);
       return newCountry;
     },
-    addLanguage: (parent, args) => {
+    addLanguage: (_, args) => {
       const newLanguage = { ...args, id: (languages.length + 1).toString() };
       languages.push(newLanguage);
       return newLanguage;
